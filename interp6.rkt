@@ -108,4 +108,7 @@
         (set-box! n (add1 (unbox n)))
         (unbox n)))))
 
-; tests coming!
+; tests
+(test (v*s-v (interp (appC (lamC 'y (setC 'y (numC 4))) (numC 5))
+          mt-env
+          mt-store)) (numV 4))
